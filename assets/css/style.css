@@ -5,6 +5,7 @@
 body {
     background: url('../images/bball-background.jpg');
     font-family: "Open Sans", sans-serif;
+    background-size: cover;
 }
 
 a {
@@ -32,17 +33,6 @@ a:focus {
 # Header
 --------------------------------------------------------------*/
 
-#header {
-    padding: 30px 0;
-    height: 92px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    transition: all 0.5s;
-    z-index: 997;
-}
-
 #tom img {
     margin-left: 0px;
     height: 200px;
@@ -53,9 +43,19 @@ a:focus {
     vertical-align: middle;
 }
 
-.container {
-    height: 10px;
+#tom2 img {
     margin-left: 0px;
+    height: 200px;
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container {
+    height: 0px;
+    width: 100%;
 }
 
 #header h1 {
@@ -91,7 +91,7 @@ a:focus {
     height: 100vh;
 }
 
-.start-container {
+#welcome .start-container {
     display: table-cell;
     margin: 0;
     padding: 0 10px;
@@ -100,16 +100,16 @@ a:focus {
 }
 
 h1 {
-    margin: 0px 0 10px 0;
-    font-size: 40px;
+    margin: 30px 0 10px 0;
+    font-size: 48px;
     font-weight: 700;
     line-height: 56px;
     text-transform: uppercase;
-    color: #343434;
+    color: #fff;
 }
 
 #welcome h2 {
-    color: #343434;
+    color: #fff;
     margin-bottom: 50px;
     font-size: 24px;
 }
@@ -141,12 +141,21 @@ h1 {
     transition: 0.5s;
     margin: 10px;
     border: 2px solid #fff;
-    color: #fff;
+    color: #343434;
 }
 
-#welcome .btn-get-started:hover {
+#questions .btn-outline-submit:hover {
     background: #2dc997;
     border: 2px solid #2dc997;
+}
+
+
+/*--------------------------------------------------------------
+# Questions
+--------------------------------------------------------------*/
+
+.questionForm {
+    color: #fff;
 }
 
 

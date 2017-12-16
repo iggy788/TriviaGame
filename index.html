@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Michigan State Trivia Game</title>
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Link to CSS stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" media="screen">
@@ -21,8 +22,7 @@
     <div class="container">
         <!--==========================#header============================-->
         <header>
-            <div id="tom" class="pull-left"><img src="assets/images/tom2.gif" alt=""></img>
-            </div>
+
         </header>
 
         <section id="welcome">
@@ -36,65 +36,70 @@
         <!--==========================.questionForm============================-->
         <main>
             <!--==========================#q1============================-->
-            <form class="questionForm" id="q1" data-question="1">
+            <form class="questionForm">
                 <h3>1. Question Number One</h3>
                 <ul>
-                    <li><input name="q1" type="radio" value="a" />Answer One</li>
-                    <li><input name="q1" type="radio" value="b" />Answer One</li>
-                    <li><input name="q1" type="radio" value="c" />Answer One</li>
-                    <li><input name="q1" type="radio" value="d" />Answer One</li>
+                    <li><input name="q1" type="radio" value="a" id="q1a"> Answer One</li>
+                    <li><input name="q1" type="radio" value="b" id="q1b"> Answer Two</li>
+                    <li><input name="q1" type="radio" value="c" id="q1c"> Answer Three</li>
+                    <li><input name="q1" type="radio" value="d" id="q1d"> Answer Four</li>
                 </ul>
             </form>
             <!--==========================#q2============================-->
             <form class="questionForm" id="q2" data-question="1">
                 <h3>2. Question Number Two</h3>
                 <ul>
-                    <li><input name="q2" type="radio" value="a" />Answer One</li>
-                    <li><input name="q2" type="radio" value="b" />Answer One</li>
-                    <li><input name="q2" type="radio" value="c" />Answer One</li>
-                    <li><input name="q2" type="radio" value="d" />Answer One</li>
+                    <li><input name="q2" type="radio" value="a" id="q2a"> Answer One</li>
+                    <li><input name="q2" type="radio" value="b" id="q2b"> Answer Two</li>
+                    <li><input name="q2" type="radio" value="c" id="q2c"> Answer Three</li>
+                    <li><input name="q2" type="radio" value="d" id="q2d"> Answer Four</li>
                 </ul>
             </form>
             <!--==========================#q3============================-->
             <form class="questionForm" id="q3" data-question="1">
                 <h3>3. Question Number Three</h3>
                 <ul>
-                    <li><input name="q3" type="radio" value="a" />Answer One</li>
-                    <li><input name="q3" type="radio" value="b" />Answer One</li>
-                    <li><input name="q3" type="radio" value="c" />Answer One</li>
-                    <li><input name="q3" type="radio" value="d" />Answer One</li>
+                    <li><input name="q3" type="radio" value="a" id="q3a"> Answer One</li>
+                    <li><input name="q3" type="radio" value="b" id="q3b"> Answer Two</li>
+                    <li><input name="q3" type="radio" value="c" id="q3c"> Answer Three</li>
+                    <li><input name="q3" type="radio" value="d" id="q3d"> Answer Four</li>
                 </ul>
             </form>
             <!--==========================#q4============================-->
             <form class="questionForm" id="q4" data-question="1">
                 <h3>4. Question Number Four</h3>
                 <ul>
-                    <li><input name="q4" type="radio" value="a" />Answer One</li>
-                    <li><input name="q4" type="radio" value="b" />Answer One</li>
-                    <li><input name="q4" type="radio" value="c" />Answer One</li>
-                    <li><input name="q4" type="radio" value="d" />Answer One</li>
+                    <li><input name="q4" type="radio" value="a" id="q4a"> Answer One</li>
+                    <li><input name="q4" type="radio" value="b" id="q4b"> Answer Two</li>
+                    <li><input name="q4" type="radio" value="c" id="q4c"> Answer Three</li>
+                    <li><input name="q4" type="radio" value="d" id="q4d"> Answer Four</li>
                 </ul>
             </form>
             <!--==========================#q5============================-->
             <form class="questionForm" id="q5" data-question="1">
                 <h3>5. Question Number Five</h3>
                 <ul>
-                    <li><input name="q5" type="radio" value="a" />Answer One</li>
-                    <li><input name="q5" type="radio" value="b" />Answer One</li>
-                    <li><input name="q5" type="radio" value="c" />Answer One</li>
-                    <li><input name="q5" type="radio" value="d" />Answer One</li>
+                    <li><input name="q5" type="radio" value="a" id="q5a"> Answer One</li>
+                    <li><input name="q5" type="radio" value="b" id="q5b"> Answer Two</li>
+                    <li><input name="q5" type="radio" value="c" id="q5c"> Answer Three</li>
+                    <li><input name="q5" type="radio" value="d" id="q5d"> Answer Four</li>
                 </ul>
             </form>
-            <button type="button" class="btn btn-outline-submit">Submit</button>
+            <input type="submit" class="btn-outline-submit">
         </main>
         <!--==========================.questionForm============================-->
-        <section id="welcome">
-            <div class="start-container">
-                <h1>Michigan State Trivia Game!</h1>
-                <h2>Test Your Knowledge About Michigan State Basketball</h2>
-                <a type="button" class="btn-get-started">Get Started</a>
-            </div>
-        </section>
+        <results>
+            <section id="welcome">
+                <div class="start-container">
+                    <h1>Results!</h1>
+                    <div id="results"></div>
+                    <div id="tom" class="pull-left"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+                    <div id="tom2" class="pull-right"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+            </section>
+        </results>
+
         <!--==========================#footer============================-->
         <footer id="footer">
             <div class="footer-top">
@@ -110,8 +115,10 @@
             </div>
         </footer>
         <!--==========================#footer============================-->
-    </div>
-    <!--==========================.container============================-->
+        </div>
+        <!--==========================.container============================-->
+        <!-- Added link to external javascript -->
+        <script type="text/javascript" src="assets/javascript/app.js "></script>
 </body>
 
 </html>
