@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Michigan State Trivia Game</title>
+
+
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+</head>
+
+<body>
+    <!--==========================.container============================-->
+    <div class="container">
+        <!--==========================#header============================-->
+        <section id="welcome">
+            <div class="start-container">
+                <h1>Michigan State Trivia Game!</h1>
+                <h2>Test Your Knowledge About Michigan State Basketball</h2>
+                <a type="button" class="btn-get-started">Get Started</a>
+            </div>
+        </section>
+
+
+        <!-- #header -->
+        <!--==========================.questionForm============================-->
+        <main>
+            <!-- Jumbotron for Title -->
+            <div class="well jumbotron">
+                <h1 class="text-center">Michigan State Trivia Game!</h1>
+            </div>
+            <h3 id="question"></h3>
+            <br/><br/>
+            <div id="results"></div>
+            <form name="quizForm" onsubmit="return submitAnswers()">
+                <br><span>1.</span> Who was the head coach of the MSU basketball team when they won the 1979 National Championship?<br>
+                <ul>
+                    <div style="margin-bottom:2px;"><input name="q1" value="Tom Izzo" type="radio"> Tom Izzo</div>
+                    <div style="margin-bottom:2px;"><input name="q1" value="Chester Brewer" type="radio"> Chester Brewer</div>
+                    <div style="margin-bottom:2px;"><input name="q1" value="Jud Heathcote" type="radio"> Jud Heathcote</div>
+                    <div style="margin-bottom:2px;"><input name="q1" value="Magic Johnson" type="radio"> Magic Johnson</div>
+                    <br>
+                </ul>
+                <br><span>2.</span> Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?<br>
+                <ul>
+                    <div style="margin-bottom:2px;"><input name="q2" value="Charlie Bell" type="radio"> Charlie Bell</div>
+                    <div style="margin-bottom:2px;"><input name="q2" value="Mateen Cleaves" type="radio"> Mateen Cleaves</div>
+                    <div style="margin-bottom:2px;"><input name="q2" value="Morris Peterson" type="radio"> Morris Peterson</div>
+                    <div style="margin-bottom:2px;"><input name="q2" value="Jason Richardson" type="radio"> Jason Richardson</div>
+                    <br>
+                </ul>
+                <br><span>3.</span> What team did MSU play in 1979 to win the National Championship?<br>
+                <ul>
+                    <div style="margin-bottom:2px;"><input name="q3" value="Kentucky Wildcats" type="radio"> Kentucky Wildcats</div>
+                    <div style="margin-bottom:2px;"><input name="q3" value="North Carolina Tar Heels" type="radio"> North Carolina Tar Heels</div>
+                    <div style="margin-bottom:2px;"><input name="q3" value="Indiana State" type="radio"> Indiana State</div>
+                    <div style="margin-bottom:2px;"><input name="q3" value="DePaul" type="radio"> DePaul</div>
+                    <br>
+                </ul>
+                <br><span>4.</span> How many times did Michigan state basketball go to the final four?<br>
+                <ul>
+                    <div style="margin-bottom:2px;"><input name="q4" value="3" type="radio"> 3</div>
+                    <div style="margin-bottom:2px;"><input name="q4" value="9" type="radio"> 9</div>
+                    <div style="margin-bottom:2px;"><input name="q4" value="8" type="radio"> 8</div>
+                    <div style="margin-bottom:2px;"><input name="q4" value="12" type="radio"> 12</div>
+                    <br>
+                </ul>
+                <br><span>5.</span> Who did the Michigan State Spartans Men's Basketball team hire as their head men's basketball coach in 1995?<br>
+                <ul>
+                    <div style="margin-bottom:2px;"><input name="q5" value="Jud Heathcoat" type="radio"> Jud Heathcoat</div>
+                    <div style="margin-bottom:2px;"><input name="q5" value="Jed Clampett" type="radio"> Jed Clampett</div>
+                    <div style="margin-bottom:2px;"><input name="q5" value="Tom Izzo" type="radio"> Tom Izzo</div>
+                    <div style="margin-bottom:2px;"><input name="q5" value="Tommy Amaker" type="radio"> Tommy Amaker</div>
+                    <br>
+                </ul>
+                <input type="submit" class="btn-outline-submit">
+            </form>
+        </main>
+        <!--==========================#results============================-->
+        <results>
+            <section id="welcome">
+                <div class="start-container">
+                    <h1>Results!</h1>
+                    <div id="results"></div>
+                    <div id="tom" class="pull-left"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+                    <div id="tom2" class="pull-right"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+                    <a type="button" class="btn btn-primary">Play Again!</a>
+            </section>
+        </results>
+
+        <!--==========================#footer============================-->
+        <div class="container">
+            <footer id="footer">
+
+                <div class="footer-top">
+
+                    <div class="copyright">
+                        &copy; Copyright <strong>Mike Ignaczak</strong>. All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!--==========================#footer============================-->
+        </div>
+        <!--==========================.container============================-->
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Added link to external javascript -->
+        <script type="text/javascript" src="assets/javascript/app2.js "></script>
+</body>
+
+</html>

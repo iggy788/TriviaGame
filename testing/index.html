@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Michigan State Trivia Game</title>
+
+
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+</head>
+
+<body>
+    <!--==========================.container============================-->
+    <div class="container">
+        <!--==========================#header============================-->
+        <section id="welcome">
+            <div class="start-container">
+                <h1>Michigan State Trivia Game!</h1>
+                <h2>Test Your Knowledge About Michigan State Basketball</h2>
+                <a type="button" class="btn-get-started">Get Started</a>
+            </div>
+        </section>
+
+
+        <!-- #header -->
+        <!--==========================.questionForm============================-->
+        <main>
+            <!-- Jumbotron for Title -->
+            <div class="well jumbotron">
+                <h1 class="text-center">Michigan State Trivia Game!</h1>
+            </div>
+            <h3 id="question"></h3>
+            <br/><br/>
+            <form id="form">
+
+            </form>
+            <input type="submit" class="btn-outline-submit">
+        </main>
+        <!--==========================#results============================-->
+        <results>
+            <section id="welcome">
+                <div class="start-container">
+                    <h1>Results!</h1>
+                    <div id="results"></div>
+                    <div id="tom" class="pull-left"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+                    <div id="tom2" class="pull-right"><img src="assets/images/tom2.gif" alt=""></img>
+                    </div>
+                    <a type="button" class="btn btn-primary">Play Again!</a>
+            </section>
+        </results>
+
+        <!--==========================#footer============================-->
+        <div class="container">
+            <footer id="footer">
+
+                <div class="footer-top">
+
+                    <div class="copyright">
+                        &copy; Copyright <strong>Mike Ignaczak</strong>. All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!--==========================#footer============================-->
+        </div>
+        <!--==========================.container============================-->
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Added link to external javascript -->
+        <script type="text/javascript" src="assets/javascript/app.js "></script>
+</body>
+
+</html>
