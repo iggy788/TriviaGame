@@ -41,6 +41,9 @@
                         <button id="choices"></button>
                     </div>
                 </div>
+                <div class="col-md-2 ">
+                    <div id="timer"></div>
+                </div>
             </div>
 
         </div>
@@ -53,7 +56,6 @@
 
 <script type="text/javascript">
     $("document").ready(function() {
-
         // Array holds all of the drinks available
         /*var questionList = [
             "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
@@ -61,56 +63,41 @@
             "How many times did Michigan state basketball go to the final four?",
             "Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?"
         ];
-
         // This line of jQuery selects the div with the matching id (#drink-options)
         var questionDiv = $("#questions");
-
         // For Loop then loops through our total drink list...
         for (var i = 0; i < questionList.length; i++) {
-
             // It then creates a new div for each drink. Note we create divs and add the content in the same line.
             var showAllQuestions = $("<div>" + questionList[i] + "</div>");
-
             // It then adds this new div to the drinkList div.
             questionDiv.append(showAllQuestions);
         }
-
         var choiceList = [
             "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
             "Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?", "What team did MSU play in 1979 to win the National Championship?",
             "How many times did Michigan state basketball go to the final four?",
             "Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?"
         ];
-
         // This line of jQuery selects the div with the matching id (#drink-options)
         var choiceDiv = $("#choices");
-
         // For Loop then loops through our total drink list...
         for (var i = 0; i < choiceList.length; i++) {
-
             // It then creates a new div for each drink. Note we create divs and add the content in the same line.
             var showAllChoices = $("<div>" + choiceList[i] + "</div>");
-
             // It then adds this new div to the drinkList div.
             choiceDiv.append(showAllChoices);
         }*/
-
         var userPick;
-
         var correctAnswer = 0;
-
         var incorrectAnswer = 0;
-
         var unAnswer = 0;
-
         var question = 0;
-
+        var count = 30;
         /*var allQuestions = {
             "questionOne": "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
             "choices": ["Tom Izzo", "Chester Brewer", "Jud Heathcote", "Magic Johnson"],
             "correctAnswer": 2,
 		};*/
-
         var allQuestions = [{
             question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
             choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
@@ -142,19 +129,15 @@
             choices: ['Jud Heathcoat', 'Jed Clampett', 'Tom Izzo', 'Tommy Amaker'],
             correctAnswer: 2,
         }, ];
-
         /*alert("The First Question is " + allQuestions["questionOne"]);
         alert("Your Choices are: " + allQuestions["choices"]);
         var correctAnswer = allQuestions.choices[2];
         alert("The Correct Answer is: " + correctAnswer);*/
-
         function displayTrivia() {
             $('#questions').html(allQuestions[0].question);
             question++;
-
             var choicesArr = allQuestions[0].choices;
             var buttonsArr = [];
-
             for (let i = 0; i < choicesArr.length; i++) {
                 var button = $('<button>');
                 button.text(choicesArr[i]);
@@ -162,7 +145,18 @@
                 $('#choices').append(button);
             }
         }
+
+        function timer() {
+            count--;
+            if (count <= 0) {
+                clearInterval(counter);
+                return;
+            }
+            $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
+        }
+        counter = setInterval(timer, 1000);
         displayTrivia();
+
     });
 </script>
 
