@@ -23,7 +23,7 @@
 
             <!-- First (and only column) -->
             <div class="col-md-12">
-                <h1>I'm in Column 1 of 1. I stretch the entire width. And keep going.</h1>
+                <h1>MICHIGAN STATE BASKETBALL TRIVIA</h1>
             </div>
         </div>
         <div class="row">
@@ -37,7 +37,7 @@
             <div class="col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Michigan State Trivia Game!</h1>
+                        <h1 class="panel-title">Answer the below questions in 30 seconds!</h1>
                     </div>
                     <div class="panel-body">
                         <div id="questionone"></div>
@@ -68,16 +68,21 @@
 </body>
 
 
-
-
 <script type="text/javascript">
+    // START JAVASCRIPT
+    // ----------------------------------------------------------------------------------------------
     $("document").ready(function() {
+        // GLOBAL VARIABLES
+        // ----------------------------------------------------------------------------------------------
         var userPick;
         var correctAnswer = 0;
         var incorrectAnswer = 0;
         var unAnswer = 0;
         var question = 0;
         var count = 30;
+
+        // SET ALL QUESTIONS ARRAY
+        // ----------------------------------------------------------------------------------------------
         var allQuestions = [{
             question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
             choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
@@ -110,8 +115,12 @@
             correctAnswer: 2,
         }, ];
 
+        // DISPLAY TRIVIA
+        // ----------------------------------------------------------------------------------------------
         function displayTrivia() {
 
+            // POPULATE QUESTION 1
+            // ----------------------------------------------------------------------------------------------
             $('#questionone').html(allQuestions[0].question);
             question++;
             var choicesArr = allQuestions[0].choices;
@@ -122,7 +131,8 @@
                 button.attr('data-id', i);
                 $('#choicesone').append(button);
             }
-
+            // POPULATE QUESTION 2
+            // ----------------------------------------------------------------------------------------------
             $('#questiontwo').html(allQuestions[1].question);
             question++;
             var choicesArr = allQuestions[1].choices;
@@ -133,6 +143,8 @@
                 button.attr('data-id', i);
                 $('#choicestwo').append(button);
             }
+            // POPULATE QUESTION 3
+            // ----------------------------------------------------------------------------------------------
             $('#questionthree').html(allQuestions[2].question);
             question++;
             var choicesArr = allQuestions[2].choices;
@@ -143,6 +155,8 @@
                 button.attr('data-id', i);
                 $('#choicesthree').append(button);
             }
+            // POPULATE QUESTION 4
+            // ----------------------------------------------------------------------------------------------
             $('#questionfour').html(allQuestions[3].question);
             question++;
             var choicesArr = allQuestions[3].choices;
@@ -153,6 +167,8 @@
                 button.attr('data-id', i);
                 $('#choicesfour').append(button);
             }
+            // POPULATE QUESTION 5
+            // ----------------------------------------------------------------------------------------------
             $('#questionfive').html(allQuestions[4].question);
             question++;
             var choicesArr = allQuestions[4].choices;
@@ -166,6 +182,8 @@
 
         }
 
+        // SET TIMER
+        // ----------------------------------------------------------------------------------------------
         function timer() {
             count--;
             if (count <= 0) {
@@ -175,6 +193,8 @@
             $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
         }
 
+        // CHECK ANSWERS
+        // ----------------------------------------------------------------------------------------------
 
         $('#choicesone').on('click', 'button', function(e) {
             userPick = $(this).data("id");
