@@ -175,10 +175,63 @@
             $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
         }
 
+
         $('#choicesone').on('click', 'button', function(e) {
             userPick = $(this).data("id");
             allQuestions[0].correctAnswer;
             if (userPick != allQuestions[0].correctAnswer) {
+                incorrectAnswer++;
+                alert("WRONG");
+            } else {
+                correctAnswer++;
+                alert("CORRECT");
+            }
+
+        })
+
+        $('#choicestwo').on('click', 'button', function(e) {
+            userPick = $(this).data("id");
+            allQuestions[1].correctAnswer;
+            if (userPick != allQuestions[1].correctAnswer) {
+                incorrectAnswer++;
+                alert("WRONG");
+            } else {
+                correctAnswer++;
+                alert("CORRECT");
+            }
+
+        })
+
+        $('#choicesthree').on('click', 'button', function(e) {
+            userPick = $(this).data("id");
+            allQuestions[2].correctAnswer;
+            if (userPick != allQuestions[2].correctAnswer) {
+                incorrectAnswer++;
+                alert("WRONG");
+            } else {
+                correctAnswer++;
+                alert("CORRECT");
+            }
+
+        })
+
+        $('#choicesfour').on('click', 'button', function(e) {
+            userPick = $(this).data("id");
+            allQuestions[3].correctAnswer;
+            if (userPick != allQuestions[3].correctAnswer) {
+                incorrectAnswer++;
+                alert("WRONG");
+            } else {
+                correctAnswer++;
+                alert("CORRECT");
+            }
+
+        })
+
+        $('#choicesfive').on('click', 'button', function(e) {
+            userPick = $(this).data("id");
+            allQuestions[4].correctAnswer;
+            if (userPick != allQuestions[4].correctAnswer) {
                 incorrectAnswer++;
                 alert("WRONG");
             } else {
