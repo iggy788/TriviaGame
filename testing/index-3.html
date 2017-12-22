@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+
+<!-- Bring in our bootstrap stylesheet -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<body>
+    <!-- Creates the Overall Grid -->
+    <div class="container">
+
+        <!-- First Row -->
+        <div class="row">
+
+            <!-- First (and only column) -->
+            <div class="col-md-12">
+                <h1>MICHIGAN STATE BASKETBALL TRIVIA</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                <div id="timer"></div>
+            </div>
+        </div>
+        <!-- Second Row -->
+        <div class="row">
+            <!-- First of two columns -->
+            <div class="col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Answer the below questions in 30 seconds!</h1>
+                    </div>
+                    <form id="quiz">
+                        <div class="panel-body">
+                            <div id="question"></div>
+                            <div id="choices"></div>
+                            <input type="submit" class="btn-outline-submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // START JAVASCRIPT
+            // ----------------------------------------------------------------------------------------------
+            $("document").ready(function() {
+                // GLOBAL VARIABLES
+                // ----------------------------------------------------------------------------------------------
+
+
+                // SET ALL QUESTIONS ARRAY
+                // ----------------------------------------------------------------------------------------------
+                var allQuestions = [{
+                    "question": "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
+                    "choices": ["Tom Izzo", "Chester Brewer", "Jud Heathcote", "Magic Johnson"],
+                    "correctAnswer": 2
+                }, {
+                    "question": "Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?",
+                    "choices": [
+                        "Charlie Bell",
+                        "Mateen Cleaves",
+                        "Morris Peterson",
+                        "Jason Richardson"
+                    ],
+                    "correctAnswer": 3
+                }, {
+                    "question": "What team did MSU play in 1979 to win the National Championship?",
+                    "choices": [
+                        "Kentucky Wildcats",
+                        "North Carolina Tar Heels",
+                        "Indiana State",
+                        "DePaul"
+                    ],
+                    "correctAnswer": 2
+                }, {
+                    "question": "How many times did Michigan state basketball go to the final four?",
+                    "choices": ["3", "9", "8", "12"],
+                    "correctAnswer": 1
+                }, {
+                    "question": "Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?",
+                    "choices": ["Jud Heathcoat", "Jed Clampett", "Tom Izzo", "Tommy Amaker"],
+                    "correctAnswer": 2
+                }];
+
+                // Convert JSON string to a JSON array
+                // ----------------------------------------------------------------------------------------------
+                // Function for displaying movie data
+                function renderButtons() {
+
+                    // Delete the content inside the question div prior to adding new movies
+                    $('#question').empty();
+
+                    var results = allQuestions.question;
+                    // Loop through the array of movies, then generate buttons for each movie in the array
+                    for (let i = 0; i < results.length; i++) {
+
+                        $("#question").html(allQuestions.question);
+                    }
+                    console.log(allQuestions[0].question);
+                    console.log(allQuestions[1].question);
+                    console.log(allQuestions[2].question);
+                    console.log(allQuestions[3].question);
+                    console.log(allQuestions[4].question);
+                }
+                renderButtons();
+            });
+        </script>
+    </div>
+</body>
+
+</html>

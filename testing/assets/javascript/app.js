@@ -47,9 +47,7 @@ var unAnswer = 0;
 
 var question = 0;
 
-var images;
-
-var count = 30;
+var count = 45;
 
 // FUNCTIONS
 // -----------------------------------------------------------------------------------------------
@@ -102,8 +100,45 @@ $(document).ready(function() {
         $('#welcome').show();
     });
 
+    function submitAnswers() {
+        var total = 5;
+        var score = 0;
+        var q1 = $('input[name=q1]:checked').val();
+        var q2 = $('input[name=q2]:checked').val();
+        var q3 = $('input[name=q3]:checked').val();
+        var q4 = $('input[name=q4]:checked').val();
+        var q5 = $('input[name=q5]:checked').val();
 
-    // Scoring
+
+
+        // Set Correct Answers
+        var answers = ['Jud Heathcote', 'Jason Richardson', 'Indiana State', '9', 'Tom Izzo'];
+        // Check Answers
+        if (q1 === answers[0]) {
+            score++;
+        }
+
+        if (q2 === answers[1]) {
+            score++;
+        }
+
+        if (q3 === answers[2]) {
+            score++;
+        }
+
+        if (q4 === answers[3]) {
+            score++;
+        }
+
+        if (q5 === answers[4]) {
+            score++;
+        }
+        totalScore = 'You Scored ' + score + ' out of ' + total;
+        $('#results').html(totalScore);
+        alert('You Scored ' + score + ' out of ' + total);
+    };
+
+    /*// Scoring
     var total = 5;
     var score = 0;
 
@@ -118,7 +153,7 @@ $(document).ready(function() {
         //$('.questionForm [name=q1]'); is the same as above
         //var answerOne = $answerOne.val();
         console.log(answerOne);
-    });
+    });*/
 });
 
 

@@ -39,29 +39,34 @@
                     <div class="panel-heading">
                         <h1 class="panel-title">Answer the below questions in 30 seconds!</h1>
                     </div>
-                    <div class="panel-body">
-                        <div id="questionone"></div>
-                        <button id="choicesone"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questiontwo"></div>
-                        <button id="choicestwo"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionthree"></div>
-                        <button id="choicesthree"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionfour"></div>
-                        <button id="choicesfour"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionfive"></div>
-                        <button id="choicesfive"></button>
-                    </div>
+                    <form id="quiz">
+                        <div class="panel-body">
+                            <div id="questionone"></div>
+                            <button id="choicesone"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questiontwo"></div>
+                            <button id="choicestwo"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionthree"></div>
+                            <button id="choicesthree"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionfour"></div>
+                            <button id="choicesfour"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionfive"></div>
+                            <button id="choicesfive"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="question"></div>
+                            <button id="choices"></button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -193,6 +198,13 @@
             $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
         }
 
+        function timeUp() {
+            // in the element with an id of time-left add an h2 saying Time's Up!
+            console.log("done");
+            $("#timer").append("<h2>Time's Up!</h2>");
+            console.log("time is up");
+        }
+
         // CHECK ANSWERS
         // ----------------------------------------------------------------------------------------------
 
@@ -265,6 +277,29 @@
         // ----------------------------------------------------------------------------------------------
         displayTrivia();
         counter = setInterval(timer, 1000);
+        setTimeout(timeUp, 1000 * 30);
+
+        allQuestions.forEach(function(question, index) {
+            console.log(question);
+            $('#question').html(JSON.stringify(question));
+        })
+
+        // Function for displaying movie data
+        // Function for displaying movie data
+        function renderQuestions() {
+
+            // Delete the content inside the movies-view div prior to adding new movies
+            // (this is necessary otherwise you will have repeat buttons)
+            $('#questions').empty();
+            // Loop through the array of movies, then generate buttons for each movie in the array
+
+            for (let i = 0; i < movies.length; i++) {
+                var button = $('<button>');
+                button.html(movies[i]);
+                //button.attr('input', i);
+                //$('#movies-view').append(button);
+            }
+        }
 
     });
 </script>

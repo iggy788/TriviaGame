@@ -7,12 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+</head>
 
-<!-- Added link to the jQuery Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 <!-- Bring in our bootstrap stylesheet -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- Link to Michigan State Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+
+<!-- Link to CSS stylesheet -->
+<link rel="stylesheet" href="assets/css/style.css" media="screen">
 
 <body>
     <!-- Creates the Overall Grid -->
@@ -20,54 +26,88 @@
 
         <!-- First Row -->
         <div class="row">
-
             <!-- First (and only column) -->
-            <div class="col-md-12">
-                <h1>MICHIGAN STATE BASKETBALL TRIVIA</h1>
-            </div>
+            <section id="welcome">
+                <div class="start-container">
+                    <div class="well jumbotron">
+                        <h1 class="text-center">MICHIGAN STATE BASKETBALL TRIVIA</h1>
+                        <h2>Test Your Knowledge About Michigan State Basketball</h2>
+                    </div>
+                    <a type="button" class="btn-get-started">Get Started</a>
+                </div>
+            </section>
         </div>
-        <div class="row">
-            <div class="col-md-12 ">
-                <div id="timer"></div>
+
+        <main>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>MICHIGAN STATE BASKETBALL TRIVIA</h1>
+                </div>
             </div>
-        </div>
-        <!-- Second Row -->
-        <div class="row">
-            <!-- First of two columns -->
-            <div class="col-md-10">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">Answer the below questions in 30 seconds!</h1>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionone"></div>
-                        <button id="choicesone"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questiontwo"></div>
-                        <button id="choicestwo"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionthree"></div>
-                        <button id="choicesthree"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionfour"></div>
-                        <button id="choicesfour"></button>
-                    </div>
-                    <div class="panel-body">
-                        <div id="questionfive"></div>
-                        <button id="choicesfive"></button>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div id="wrapper">
+                        <div id="timer">00:00</div>
                     </div>
                 </div>
             </div>
 
-        </div>
+            <!-- Second Row -->
+
+            <!-- First of two columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Answer the below questions in 45 seconds!</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionone"></div>
+                            <button id="choicesone"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questiontwo"></div>
+                            <button id="choicestwo"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionthree"></div>
+                            <button id="choicesthree"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionfour"></div>
+                            <button id="choicesfour"></button>
+                        </div>
+                        <div class="panel-body">
+                            <div id="questionfive"></div>
+                            <button id="choicesfive"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
     </div>
 
-</body>
+    <!--==========================#footer============================-->
+    <div class="container">
+        <footer id="footer">
 
-<!-- Added link to external javascript -->
-<script type="text/javascript" src="assets/javascript/app.js "></script>
+            <div class="footer-top">
+
+                <div class="copyright">
+                    &copy; Copyright <strong>Mike Ignaczak</strong>. All Rights Reserved
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added link to external javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js "></script>
+
+</body>
 
 </html>

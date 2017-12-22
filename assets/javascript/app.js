@@ -1,6 +1,11 @@
 // START JAVASCRIPT
 // ----------------------------------------------------------------------------------------------
 $('document').ready(function() {
+
+    $('main').hide();
+    $('results').hide();
+
+
     // GLOBAL VARIABLES
     // ----------------------------------------------------------------------------------------------
     var userPick;
@@ -9,6 +14,7 @@ $('document').ready(function() {
     var unAnswer = 0;
     var question = 0;
     var count = 30;
+
 
     // SET ALL QUESTIONS ARRAY
     // ----------------------------------------------------------------------------------------------
@@ -125,18 +131,65 @@ $('document').ready(function() {
         $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
     }
 
+    function timeUp() {
+        // in the element with an id of time-left add an h2 saying Time's Up!
+        console.log('done');
+        $('#timer').append("<h2>Time's Up!</h2>");
+        console.log('time is up');
+        submitAnswers();
+    }
+
     // CHECK ANSWERS
     // ----------------------------------------------------------------------------------------------
+
+    /*
+        function submitAnswers() {
+            var total = 5;
+            var score = 0;
+            var q1 = $('input[name=q1]:checked').val();
+            var q2 = $('input[name=q2]:checked').val();
+            var q3 = $('input[name=q3]:checked').val();
+            var q4 = $('input[name=q4]:checked').val();
+            var q5 = $('input[name=q5]:checked').val();
+
+
+
+            // Set Correct Answers
+            var answers = ['Jud Heathcote', 'Jason Richardson', 'Indiana State', '9', 'Tom Izzo'];
+            // Check Answers
+            if (q1 === answers[0]) {
+                score++;
+            }
+
+            if (q2 === answers[1]) {
+                score++;
+            }
+
+            if (q3 === answers[2]) {
+                score++;
+            }
+
+            if (q4 === answers[3]) {
+                score++;
+            }
+
+            if (q5 === answers[4]) {
+                score++;
+            }
+            totalScore = 'You Scored ' + score + ' out of ' + total;
+            $('#results').html(totalScore);
+            alert('You Scored ' + score + ' out of ' + total);
+        };
+    */
+
 
     $('#choicesone').on('click', 'button', function(e) {
         userPick = $(this).data('id');
         allQuestions[0].correctAnswer;
         if (userPick != allQuestions[0].correctAnswer) {
             incorrectAnswer++;
-            alert('WRONG');
         } else {
             correctAnswer++;
-            alert('CORRECT');
         }
     });
 
@@ -145,10 +198,8 @@ $('document').ready(function() {
         allQuestions[1].correctAnswer;
         if (userPick != allQuestions[1].correctAnswer) {
             incorrectAnswer++;
-            alert('WRONG');
         } else {
             correctAnswer++;
-            alert('CORRECT');
         }
     });
 
@@ -157,10 +208,8 @@ $('document').ready(function() {
         allQuestions[2].correctAnswer;
         if (userPick != allQuestions[2].correctAnswer) {
             incorrectAnswer++;
-            alert('WRONG');
         } else {
             correctAnswer++;
-            alert('CORRECT');
         }
     });
 
@@ -169,10 +218,8 @@ $('document').ready(function() {
         allQuestions[3].correctAnswer;
         if (userPick != allQuestions[3].correctAnswer) {
             incorrectAnswer++;
-            alert('WRONG');
         } else {
             correctAnswer++;
-            alert('CORRECT');
         }
     });
 
@@ -181,15 +228,27 @@ $('document').ready(function() {
         allQuestions[4].correctAnswer;
         if (userPick != allQuestions[4].correctAnswer) {
             incorrectAnswer++;
-            alert('WRONG');
         } else {
             correctAnswer++;
-            alert('CORRECT');
         }
+
+        var total = 5;
+        totalScore = 'You Scored ' + correctAnswer + ' out of ' + total;
+        $('#results').html(totalScore);
+        alert('You Scored ' + correctAnswer + ' out of ' + total);
     });
 
     // MAIN PROCESS
     // ----------------------------------------------------------------------------------------------
-    displayTrivia();
-    counter = setInterval(timer, 1000);
+
+    $('.btn-get-started').click(function start() {
+        $('main').show();
+        $('#welcome').hide();
+        displayTrivia();
+        counter = setInterval(timer, 1000);
+        setTimeout(timeUp, 1000 * 30);
+
+    });
+
+
 });
