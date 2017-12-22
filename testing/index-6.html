@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>MICHIGAN STATE BASKETBALL TRIVIA</title>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="../assets/css/style.css" media="screen">
+
+</head>
+
+<body>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>MICHIGAN STATE BASKETBALL TRIVIA</h1>
+                <button type="button" class="btn-get-started"><span class="glyphicon glyphicon-arrow-right"></span>Get Started</button>
+                <div id="quiz">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div id="wrapper">
+                                <div id="timer">00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question">
+                    </div>
+                    <br /><br />
+                    <button id="btnSubmit" type="submit" value="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function() {
+            // Hide quiz questions until user clicks get started
+            $('#quiz').hide();
+
+            // SET GLOBAL VARIABLES
+            // ----------------------------------------------------------------------------------------------
+            var userPick;
+            var correctAnswer = 0;
+            var incorrectAnswer = 0;
+            var unAnswer = 0;
+            var question = 0;
+            var count = 30;
+
+            // After User Clicks Get Started populate the quiz
+            $('button').click(function() {
+                // Have the quiz questions slide down 
+                $('#quiz').slideDown();
+                // Hide the Get Started screent
+                $(this).hide();
+                // Format the Submit button after the click event occurs
+                $(".btn-primary").css("cssText", "display: block !important; margin:auto; width: 30%;");
+
+                //Populate the questions
+                // SET ALL QUESTIONS ARRAY
+                // ----------------------------------------------------------------------------------------------
+                var allQuestions = [{
+                    question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
+                    choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
+                    correctAnswer: 'Jud Heathcote',
+                }, {
+                    question: 'Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?',
+                    choices: [
+                        'Charlie Bell',
+                        'Mateen Cleaves',
+                        'Morris Peterson',
+                        'Jason Richardson',
+                    ],
+                    correctAnswer: 'Jason Richardson',
+                }, {
+                    question: 'What team did MSU play in 1979 to win the National Championship?',
+                    choices: [
+                        'Kentucky Wildcats',
+                        'North Carolina Tar Heels',
+                        'Indiana State',
+                        'DePaul',
+                    ],
+                    correctAnswer: 'Indiana State',
+                }, {
+                    question: 'How many times did Michigan state basketball go to the final four?',
+                    choices: ['3', '9', '8', '12'],
+                    correctAnswer: '9',
+                }, {
+                    question: 'Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?',
+                    choices: ['Jud Heathcoat', 'Jed Clampett', 'Tom Izzo', 'Tommy Amaker'],
+                    correctAnswer: 'Tom Izzo',
+                }, ];
+
+
+                // DISPLAY QUESTIONS
+                for (var i = 0; i < allQuestions.length; i++) {
+
+                    $('#question').append("<br /><span>" + (i + 1) + ". </span>");
+                    $('#question').append(allQuestions[i].question);
+                    $('#question').append("<br />");
+                    allQuestions[i].choices.forEach(function(questionChoice) {
+                        $('#question').append('<input type="radio" name="radio_group" value="' + i + '">');
+                        $('input[type="radio"]:checked').each(function() {
+                            console.log($(this).val());
+                        })
+                        $('#question').append(questionChoice);
+                        $('#question').append("<br />");
+                        console.log(i);
+
+                    })
+                }
+
+                $
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
