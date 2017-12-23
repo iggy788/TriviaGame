@@ -1,27 +1,20 @@
-// START JAVASCRIPT
-// ----------------------------------------------------------------------------------------------
 $('document').ready(function() {
+    // Hide quiz questions until user clicks get started
+    $('#quiz').hide();
+    $('#results').hide();
 
-    $('main').hide();
-    $('results').hide();
-
-
-    // GLOBAL VARIABLES
+    // SET GLOBAL VARIABLES
     // ----------------------------------------------------------------------------------------------
-    var userPick;
-    var correctAnswer = 0;
-    var incorrectAnswer = 0;
-    var unAnswer = 0;
-    var question = 0;
-    var count = 30;
-
-
-    // SET ALL QUESTIONS ARRAY
-    // ----------------------------------------------------------------------------------------------
+    // ARRAY OF ALL QUESTIONS
     var allQuestions = [{
             question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
-            choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
-            correctAnswer: 2,
+            choices: [
+                'Tom Izzo',
+                'Chester Brewer',
+                'Jud Heathcote',
+                'Magic Johnson'
+            ],
+            correctAnswer: 'Jud Heathcote'
         },
         {
             question: 'Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?',
@@ -29,9 +22,9 @@ $('document').ready(function() {
                 'Charlie Bell',
                 'Mateen Cleaves',
                 'Morris Peterson',
-                'Jason Richardson',
+                'Jason Richardson'
             ],
-            correctAnswer: 3,
+            correctAnswer: 'Jason Richardson'
         },
         {
             question: 'What team did MSU play in 1979 to win the National Championship?',
@@ -39,216 +32,191 @@ $('document').ready(function() {
                 'Kentucky Wildcats',
                 'North Carolina Tar Heels',
                 'Indiana State',
-                'DePaul',
+                'DePaul'
             ],
-            correctAnswer: 2,
+            correctAnswer: 'Indiana State'
         },
         {
             question: 'How many times did Michigan state basketball go to the final four?',
-            choices: ['3', '9', '8', '12'],
-            correctAnswer: 1,
+            choices: [
+                '3',
+                '9',
+                '8',
+                '12'
+            ],
+            correctAnswer: '9'
         },
         {
             question: 'Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?',
-            choices: ['Jud Heathcoat', 'Jed Clampett', 'Tom Izzo', 'Tommy Amaker'],
-            correctAnswer: 2,
-        },
+            choices: [
+                'Jud Heathcoat',
+                'Jed Clampett',
+                'Tom Izzo',
+                'Tommy Amaker'
+            ],
+            correctAnswer: 'Tom Izzo'
+        }
     ];
 
-    // DISPLAY TRIVIA
-    // ----------------------------------------------------------------------------------------------
-    function displayTrivia() {
-        // POPULATE QUESTION 1
-        // ----------------------------------------------------------------------------------------------
-        $('#questionone').html(allQuestions[0].question);
-        question++;
-        var choicesArr = allQuestions[0].choices;
-        var buttonsArr = [];
-        for (let i = 0; i < choicesArr.length; i++) {
-            var button = $('<button>');
-            button.text(choicesArr[i]);
-            button.attr('data-id', i);
-            $('#choicesone').append(button);
-        }
-        // POPULATE QUESTION 2
-        // ----------------------------------------------------------------------------------------------
-        $('#questiontwo').html(allQuestions[1].question);
-        question++;
-        var choicesArr = allQuestions[1].choices;
-        var buttonsArr = [];
-        for (let i = 0; i < choicesArr.length; i++) {
-            var button = $('<button>');
-            button.text(choicesArr[i]);
-            button.attr('data-id', i);
-            $('#choicestwo').append(button);
-        }
-        // POPULATE QUESTION 3
-        // ----------------------------------------------------------------------------------------------
-        $('#questionthree').html(allQuestions[2].question);
-        question++;
-        var choicesArr = allQuestions[2].choices;
-        var buttonsArr = [];
-        for (let i = 0; i < choicesArr.length; i++) {
-            var button = $('<button>');
-            button.text(choicesArr[i]);
-            button.attr('data-id', i);
-            $('#choicesthree').append(button);
-        }
-        // POPULATE QUESTION 4
-        // ----------------------------------------------------------------------------------------------
-        $('#questionfour').html(allQuestions[3].question);
-        question++;
-        var choicesArr = allQuestions[3].choices;
-        var buttonsArr = [];
-        for (let i = 0; i < choicesArr.length; i++) {
-            var button = $('<button>');
-            button.text(choicesArr[i]);
-            button.attr('data-id', i);
-            $('#choicesfour').append(button);
-        }
-        // POPULATE QUESTION 5
-        // ----------------------------------------------------------------------------------------------
-        $('#questionfive').html(allQuestions[4].question);
-        question++;
-        var choicesArr = allQuestions[4].choices;
-        var buttonsArr = [];
-        for (let i = 0; i < choicesArr.length; i++) {
-            var button = $('<button>');
-            button.text(choicesArr[i]);
-            button.attr('data-id', i);
-            $('#choicesfive').append(button);
+    var correctAnswer = 0;
+    var incorrectAnswer = 0;
+    var unAnswer = 0;
+    var question = 0;
+    var count = 31;
+    var total = 5;
+    var score = 0;
+
+    // After User Clicks Get Started populate the quiz
+    // ------------------------------------------------
+    $('button').click(function() {
+        counter = setInterval(timer, 1000);
+        setTimeout(timeUp, 1000 * 31);
+        displayQuestions();
+        // Have the quiz questions slide down
+        $('#quiz').slideDown();
+        // Hide the Get Started screen
+        $('#welcome').hide();
+        // Format the Submit button after the click event occurs
+        /*$('.btn-primary').css(
+            'cssText',
+            'display: block !important; margin:auto; width: 30%;'
+        );*/
+    });
+
+    // CHECK WHAT WAS CHECKED WHEN SUBMIT WAS CLICKED
+    // ------------------------------------------------
+    $('#btnSubmit').on('click', function(event) {
+        event.preventDefault();
+        // we can't use .val() here because
+        // that will return only the FIRST checked element.
+        //var results = $('input[type=radio]:checked').val();
+        var results = $('input[type=radio]:checked');
+        // the entire list
+
+        //console.log(results);
+        // if there are multiple items checked, then they
+        // will be in a jQuery array...a little differen't than
+        // what we've done. You may have to do something like
+        results.each(function(index, element) {
+
+            //console.log(element.value); // this isn't a jQuery object...weird, I know.
+            // if you want it to be a jquery object, you can do something like:
+            $(element).val(); // <-- turns it back to jQuery AND gets the value
+            // both of these give the same output, but one uses vanilla js (line 98)
+            console.log(index + ':' + $(element).val());
+            console.log(index + ':' + allQuestions[0].correctAnswer);
+
+
+            if (index + ':' + $(element).val() === index + ':' + allQuestions[0].correctAnswer) {
+                score++;
+                console.log("YESit worked");
+            }
+
+            if (index + ':' + $(element).val() === index + ':' + allQuestions[1].correctAnswer) {
+                score++;
+                console.log('YESit worked');
+            }
+
+            if (index + ':' + $(element).val() === index + ':' + allQuestions[2].correctAnswer) {
+                score++;
+                console.log('YESit worked');
+            }
+
+            if (index + ':' + $(element).val() === index + ':' + allQuestions[3].correctAnswer) {
+                score++;
+                console.log('YESit worked');
+            }
+
+            if (index + ':' + $(element).val() === index + ':' + allQuestions[4].correctAnswer) {
+                score++;
+                console.log('YESit worked');
+            }
+            totalScore = 'You Scored ' + score + ' out of ' + total;
+            $('#results').html(totalScore);
+            //alert('You Scored ' + score + ' out of ' + total);
+
+            /*if ($(element).val() === allQuestions[0].correctAnswer) {
+                console.log('yes');
+                console.log(results);
+            }
+            if ($(element).val() === allQuestions[1].correctAnswer) {
+                console.log('yes');
+                console.log(results);
+            }
+            if ($(element).val() === allQuestions[2].correctAnswer) {
+                console.log('yes');
+                console.log(results);
+            }*/
+
+            // and the other uses jQuery (line 102)
+            console.log($(element).val());
+            $('#quiz').hide();
+            //console.log(allQuestions[0].correctAnswer);
+            //console.log(allQuestions[1].correctAnswer);
+
+
+
+            //return $(element).val() === results.correctAnswer;
+
+
+
+            $('#results').show();
+        });
+    });
+
+    // FUNCTIONS
+    // ------------------------------------------------
+
+
+
+    // DISPLAY QUESTIONS
+    // ------------------------------------------------
+    function displayQuestions() {
+        for (var i = 0; i < allQuestions.length; i++) {
+            $('#question').append('<br /><span>' + (i + 1) + '. </span>');
+            $('#question').append(allQuestions[i].question);
+            $('#question').append('<br />');
+
+            // ADD THE CHOICES FOR EACH QUESTION WITH RADIO BUTTONS
+            allQuestions[i].choices.forEach(function(questionChoice) {
+                //allQuestions[j].correctAnswer.forEach(function(correctChoice) {
+                $('#question').append('<input type="radio" name="' + allQuestions[i].question + '" value="' + questionChoice + '"> ');
+                $('#question').append(questionChoice + '<br />');
+
+                //console.log(i);
+                // console.log(allQuestions[i].question);
+                //console.log(questionChoice);
+                // console.log(allQuestions[i].correctAnswer);
+            });
+            //});
+            /*for (var j = 0; j < allQuestions[j].correctAnswer.length; j++) {
+                   console.log(allQuestions[j].correctAnswer);
+               }*/
+
+            // ADD THE CHOICES FOR EACH QUESTION WITH RADIO BUTTONS
+            /*allQuestions[i].correctAnswer.forEach(function(questionAnswer) {
+
+                     console.log(i);
+                     console.log(questionAnswer);
+                 });*/
         }
     }
 
-    // SET TIMER
-    // ----------------------------------------------------------------------------------------------
+    // SET TIMER FUNCTIONS
+    // ------------------------------------------------
     function timer() {
         count--;
-        if (count <= 0) {
+        if (count < 0) {
             clearInterval(counter);
             return;
         }
-        $('#timer').html('Time remaining: ' + '00:' + count + ' secs');
+        $('#timer').html('Time remaining: ' + count + ' secs');
     }
 
     function timeUp() {
         // in the element with an id of time-left add an h2 saying Time's Up!
-        console.log('done');
+        //console.log('done');
         $('#timer').append("<h2>Time's Up!</h2>");
-        console.log('time is up');
-        submitAnswers();
+        //console.log('time is up');
     }
-
-    // CHECK ANSWERS
-    // ----------------------------------------------------------------------------------------------
-
-    /*
-        function submitAnswers() {
-            var total = 5;
-            var score = 0;
-            var q1 = $('input[name=q1]:checked').val();
-            var q2 = $('input[name=q2]:checked').val();
-            var q3 = $('input[name=q3]:checked').val();
-            var q4 = $('input[name=q4]:checked').val();
-            var q5 = $('input[name=q5]:checked').val();
-
-
-
-            // Set Correct Answers
-            var answers = ['Jud Heathcote', 'Jason Richardson', 'Indiana State', '9', 'Tom Izzo'];
-            // Check Answers
-            if (q1 === answers[0]) {
-                score++;
-            }
-
-            if (q2 === answers[1]) {
-                score++;
-            }
-
-            if (q3 === answers[2]) {
-                score++;
-            }
-
-            if (q4 === answers[3]) {
-                score++;
-            }
-
-            if (q5 === answers[4]) {
-                score++;
-            }
-            totalScore = 'You Scored ' + score + ' out of ' + total;
-            $('#results').html(totalScore);
-            alert('You Scored ' + score + ' out of ' + total);
-        };
-    */
-
-
-    $('#choicesone').on('click', 'button', function(e) {
-        userPick = $(this).data('id');
-        allQuestions[0].correctAnswer;
-        if (userPick != allQuestions[0].correctAnswer) {
-            incorrectAnswer++;
-        } else {
-            correctAnswer++;
-        }
-    });
-
-    $('#choicestwo').on('click', 'button', function(e) {
-        userPick = $(this).data('id');
-        allQuestions[1].correctAnswer;
-        if (userPick != allQuestions[1].correctAnswer) {
-            incorrectAnswer++;
-        } else {
-            correctAnswer++;
-        }
-    });
-
-    $('#choicesthree').on('click', 'button', function(e) {
-        userPick = $(this).data('id');
-        allQuestions[2].correctAnswer;
-        if (userPick != allQuestions[2].correctAnswer) {
-            incorrectAnswer++;
-        } else {
-            correctAnswer++;
-        }
-    });
-
-    $('#choicesfour').on('click', 'button', function(e) {
-        userPick = $(this).data('id');
-        allQuestions[3].correctAnswer;
-        if (userPick != allQuestions[3].correctAnswer) {
-            incorrectAnswer++;
-        } else {
-            correctAnswer++;
-        }
-    });
-
-    $('#choicesfive').on('click', 'button', function(e) {
-        userPick = $(this).data('id');
-        allQuestions[4].correctAnswer;
-        if (userPick != allQuestions[4].correctAnswer) {
-            incorrectAnswer++;
-        } else {
-            correctAnswer++;
-        }
-
-        var total = 5;
-        totalScore = 'You Scored ' + correctAnswer + ' out of ' + total;
-        $('#results').html(totalScore);
-        alert('You Scored ' + correctAnswer + ' out of ' + total);
-    });
-
-    // MAIN PROCESS
-    // ----------------------------------------------------------------------------------------------
-
-    $('.btn-get-started').click(function start() {
-        $('main').show();
-        $('#welcome').hide();
-        displayTrivia();
-        counter = setInterval(timer, 1000);
-        setTimeout(timeUp, 1000 * 30);
-
-    });
-
-
 });
