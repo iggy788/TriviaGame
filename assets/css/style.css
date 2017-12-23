@@ -1,7 +1,8 @@
 body {
     /* Visual */
-    background: green;
     color: #fff;
+    background: url('../images/bball-background.jpg');
+    font-family: 'Montserrat', sans-serif;
 }
 
 #welcome {
@@ -10,8 +11,9 @@ body {
     height: 100vh;
 }
 
-#welcome .btn-get-started {
-    font-family: "Poppins", sans-serif;
+#welcome .btn-get-started,
+#btnSubmit {
+    font-family: 'Montserrat', sans-serif bold;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
@@ -22,19 +24,18 @@ body {
     transition: 0.5s;
     margin: 10px;
     border: 2px solid #fff;
-    color: #fff;
 }
 
-a {
+button {
     color: #2dc997;
 }
 
-a:hover,
-a:active,
-a:focus {
-    color: #2dca98;
-    outline: none;
-    text-decoration: none;
+#welcome .start-container {
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .container {
@@ -51,6 +52,17 @@ a:focus {
 
 h1 {
     font-family: 'Montserrat', sans-serif bold;
+    margin: 30px 0 10px 0;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#questions {
+    background: #2dc997;
+    border: 2px solid #2dc997;
 }
 
 #timer {
@@ -70,15 +82,26 @@ h1 {
     margin: 0px auto 0;
 }
 
-.panel-default {
-    margin: 0px auto 0;
+#tom img {
+    margin-left: 0px;
+    height: 200px;
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    float: left;
 }
 
-#buttons {
-    /* Typography */
+#tom2 img {
+    margin-left: 0px;
+    height: 200px;
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px;
     text-align: center;
+    vertical-align: middle;
+    float: right;
 }
 
 

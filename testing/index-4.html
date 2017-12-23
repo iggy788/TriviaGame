@@ -58,48 +58,49 @@
     // START JAVASCRIPT
     // ----------------------------------------------------------------------------------------------
     $("document").ready(function() {
-                // GLOBAL VARIABLES
-                // ----------------------------------------------------------------------------------------------
+        // GLOBAL VARIABLES
+        // ----------------------------------------------------------------------------------------------
 
 
-                // SET ALL QUESTIONS ARRAY
-                // ----------------------------------------------------------------------------------------------
-                var allQuestions = [{
-                    question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
-                    choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
-                    correctAnswer: 2,
-                }, {
-                    question: 'Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?',
-                    choices: [
-                        'Charlie Bell',
-                        'Mateen Cleaves',
-                        'Morris Peterson',
-                        'Jason Richardson',
-                    ],
-                    correctAnswer: 3,
-                }, {
-                    question: 'What team did MSU play in 1979 to win the National Championship?',
-                    choices: [
-                        'Kentucky Wildcats',
-                        'North Carolina Tar Heels',
-                        'Indiana State',
-                        'DePaul',
-                    ],
-                    correctAnswer: 2,
-                }, {
-                    question: 'How many times did Michigan state basketball go to the final four?',
-                    choices: ['3', '9', '8', '12'],
-                    correctAnswer: 1,
-                }, {
-                    question: 'Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?',
-                    choices: ['Jud Heathcoat', 'Jed Clampett', 'Tom Izzo', 'Tommy Amaker'],
-                    correctAnswer: 2,
-                }, ];
+        // SET ALL QUESTIONS ARRAY
+        // ----------------------------------------------------------------------------------------------
+        var allQuestions = [{
+            question: 'Who was the head coach of the MSU basketball team when they won the 1979 National Championship?',
+            choices: ['Tom Izzo', 'Chester Brewer', 'Jud Heathcote', 'Magic Johnson'],
+            correctAnswer: 2,
+        }, {
+            question: 'Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?',
+            choices: [
+                'Charlie Bell',
+                'Mateen Cleaves',
+                'Morris Peterson',
+                'Jason Richardson',
+            ],
+            correctAnswer: 3,
+        }, {
+            question: 'What team did MSU play in 1979 to win the National Championship?',
+            choices: [
+                'Kentucky Wildcats',
+                'North Carolina Tar Heels',
+                'Indiana State',
+                'DePaul',
+            ],
+            correctAnswer: 2,
+        }, {
+            question: 'How many times did Michigan state basketball go to the final four?',
+            choices: ['3', '9', '8', '12'],
+            correctAnswer: 1,
+        }, {
+            question: 'Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?',
+            choices: ['Jud Heathcoat', 'Jed Clampett', 'Tom Izzo', 'Tommy Amaker'],
+            correctAnswer: 2,
+        }, ];
 
-                // Convert JSON string to a JSON array
-                // ----------------------------------------------------------------------------------------------
-                var questions = JSON.stringify(allQuestions);
-                $("#question").html(questions)
+        // Convert JSON string to a JSON array
+        // ----------------------------------------------------------------------------------------------
+        var questions = JSON.stringify(allQuestions);
+        $("#question").html(questions)
+    });
 </script>
 
 </html>

@@ -38,9 +38,6 @@
                         <button id="btnSubmit" type="submit" value="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-
-
-
             </div>
         </div>
         <!-- /.row -->
@@ -129,20 +126,21 @@
 
                     // ADD THE CHOICES FOR EACH QUESTION WITH RADIO BUTTONS
                     allQuestions[i].choices.forEach(function(questionChoice) {
-                        $('#question').append('<input type="radio" name="' + questionChoice + '" value="' + i + questionChoice + '"> ');
-                        $('#question').append(questionChoice);
-                        $('#question').append("<br />");
-                        console.log(i);
-                        //console.log(questionChoice);
-
-                        // CHECK WHAT WAS CHECKED WHEN SUBMIT WAS CLICKED
-                        $('#btnSubmit').on('submit', function(event) {
-                            event.preventDefault();
-                            var results = $('input[name="' + name + '"]:checked').val();
-                            console.log(results);
+                            $('#question').append('<input type="radio" name="' + allQuestions[i].question + '" value="' + i + questionChoice + '"> ');
+                            $('#question').append(questionChoice);
+                            $('#question').append("<br />");
+                            console.log(i);
+                            //console.log(questionChoice);
 
 
                         })
+                        // CHECK WHAT WAS CHECKED WHEN SUBMIT WAS CLICKED
+                    $('#btnSubmit').on('submit', function(event) {
+                        event.preventDefault();
+                        var results = $('input[name="' + name + '"]:checked').val();
+                        console.log(results);
+
+
                     })
                 }
             }
