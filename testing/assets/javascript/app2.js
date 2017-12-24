@@ -93,3 +93,36 @@ for (var i = 1; i <= total; i++) {
 
 // MAIN PROCESS
 // ----------------------------------------------------------------------------------------------*/
+
+
+// Array holds all of the drinks available
+/*var questionList = [
+    "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
+    "Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?", "What team did MSU play in 1979 to win the National Championship?",
+    "How many times did Michigan state basketball go to the final four?",
+    "Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?"
+];
+// This line of jQuery selects the div with the matching id (#drink-options)
+var questionDiv = $("#questions");
+// For Loop then loops through our total drink list...
+for (var i = 0; i < questionList.length; i++) {
+    // It then creates a new div for each drink. Note we create divs and add the content in the same line.
+    var showAllQuestions = $("<div>" + questionList[i] + "</div>");
+    // It then adds this new div to the drinkList div.
+    questionDiv.append(showAllQuestions);
+}
+var choiceList = [
+    "Who was the head coach of the MSU basketball team when they won the 1979 National Championship?",
+    "Which one of these players from the 2000 National Champions team, was not from Flint, Michigan?", "What team did MSU play in 1979 to win the National Championship?",
+    "How many times did Michigan state basketball go to the final four?",
+    "Who did the Michigan State Spartans Mens Basketball team hire as their head mens basketball coach in 1995?"
+];
+// This line of jQuery selects the div with the matching id (#drink-options)
+var choiceDiv = $("#choices");
+// For Loop then loops through our total drink list...
+for (var i = 0; i < choiceList.length; i++) {
+    // It then creates a new div for each drink. Note we create divs and add the content in the same line.
+    var showAllChoices = $("<div>" + choiceList[i] + "</div>");
+    // It then adds this new div to the drinkList div.
+    choiceDiv.append(showAllChoices);
+}*/

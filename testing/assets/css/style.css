@@ -20,9 +20,17 @@ a:focus {
     text-decoration: none;
 }
 
-.btn-outline-submit:hover,
-.btn-outline-submit:active,
-.btn-outline-submit:focus {
+#btnSubmit:hover,
+#btnSubmit:active,
+#btnSubmit:focus {
+    color: #2dca98;
+    outline: none;
+    text-decoration: none;
+}
+
+#btnPlayAgain:hover,
+#btnPlayAgain:active,
+#btnPlayAgain:focus {
     color: #2dca98;
     outline: none;
     text-decoration: none;
@@ -144,7 +152,7 @@ h1 {
     color: #343434;
 }
 
-#questions .btn-outline-submit:hover {
+#questions #btnSubmit:hover {
     background: #2dc997;
     border: 2px solid #2dc997;
 }

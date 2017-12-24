@@ -103,71 +103,43 @@ $('document').ready(function() {
             // if you want it to be a jquery object, you can do something like:
             $(element).val(); // <-- turns it back to jQuery AND gets the value
             // both of these give the same output, but one uses vanilla js (line 98)
-            console.log(index + ':' + $(element).val());
-            console.log(index + ':' + allQuestions[0].correctAnswer);
+            //console.log(index + ':' + $(element).val());
+            //console.log(index + ':' + allQuestions[0].correctAnswer);
 
 
             if (index + ':' + $(element).val() === index + ':' + allQuestions[0].correctAnswer) {
                 score++;
-                console.log("YESit worked");
             }
 
             if (index + ':' + $(element).val() === index + ':' + allQuestions[1].correctAnswer) {
                 score++;
-                console.log('YESit worked');
             }
 
             if (index + ':' + $(element).val() === index + ':' + allQuestions[2].correctAnswer) {
                 score++;
-                console.log('YESit worked');
             }
 
             if (index + ':' + $(element).val() === index + ':' + allQuestions[3].correctAnswer) {
                 score++;
-                console.log('YESit worked');
             }
 
             if (index + ':' + $(element).val() === index + ':' + allQuestions[4].correctAnswer) {
                 score++;
-                console.log('YESit worked');
             }
             totalScore = 'You Scored ' + score + ' out of ' + total;
-            $('#results').html(totalScore);
-            //alert('You Scored ' + score + ' out of ' + total);
-
-            /*if ($(element).val() === allQuestions[0].correctAnswer) {
-                console.log('yes');
-                console.log(results);
-            }
-            if ($(element).val() === allQuestions[1].correctAnswer) {
-                console.log('yes');
-                console.log(results);
-            }
-            if ($(element).val() === allQuestions[2].correctAnswer) {
-                console.log('yes');
-                console.log(results);
-            }*/
-
+            $('#userPicks').html(totalScore);
             // and the other uses jQuery (line 102)
-            console.log($(element).val());
+            //console.log($(element).val());
             $('#quiz').hide();
             //console.log(allQuestions[0].correctAnswer);
             //console.log(allQuestions[1].correctAnswer);
-
-
-
             //return $(element).val() === results.correctAnswer;
-
-
-
             $('#results').show();
         });
     });
 
     // FUNCTIONS
     // ------------------------------------------------
-
-
 
     // DISPLAY QUESTIONS
     // ------------------------------------------------
